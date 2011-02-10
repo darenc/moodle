@@ -1655,7 +1655,7 @@ class MoodleQuickForm extends HTML_QuickForm_DHTMLRulesTableless {
         foreach ($this->_rules as $elementName => $rules) {
             foreach ($rules as $rule) {
                 if ('client' == $rule['validation']) {
-                    unset($element); //TODO: find out how to properly initialize it
+                    $element = null;
 
                     $dependent  = isset($rule['dependent']) && is_array($rule['dependent']);
                     $rule['message'] = strtr($rule['message'], $js_escape);
