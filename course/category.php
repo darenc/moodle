@@ -131,7 +131,10 @@
 /// Print current category description
     if (!$editingon && $category->description) {
         print_box_start();
-        echo format_text($category->description); // for multilang filter
+        $options = NULL;
+        $options->noclean = true;
+        $options->para = false;
+        echo format_text($category->description, FORMAT_MOODLE, $options); // for multilang filter
         print_box_end();
     }
 
