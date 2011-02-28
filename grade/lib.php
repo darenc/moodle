@@ -106,7 +106,7 @@ class graded_users_iterator {
             }
         }
 
-        $users_sql = "SELECT u.* $ofields
+        $users_sql = "SELECT DISTINCT u.id, u.firstname, u.lastname, u.idnumber, u.institution, u.department, u.email $ofields
                         FROM {$CFG->prefix}user u
                              INNER JOIN {$CFG->prefix}role_assignments ra ON u.id = ra.userid
                              $groupsql
